@@ -66,3 +66,7 @@ h6 {
     1rem
   ); /* Min 14px, ideal 2% width, Max 16px */
 }
+
+.green-text {
+  color: var(--primary-color);
+}

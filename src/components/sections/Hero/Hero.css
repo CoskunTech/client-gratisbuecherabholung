@@ -18,10 +18,6 @@
   padding: 1rem 0;
 }
 
-.green-text {
-  color: var(--primary-color);
-}
-
 .heto-text-container p {
   max-width: 60%;
 }

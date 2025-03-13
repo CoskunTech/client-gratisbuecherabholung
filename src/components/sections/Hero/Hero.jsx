@@ -6,7 +6,7 @@ import "./Hero.css";
 
 const Hero = () => {
   return (
-    <div className="hero-container">
+    <div id="home" className="hero-container">
       <div className="heto-text-container">
         <h1>
           Deine alten <br />
