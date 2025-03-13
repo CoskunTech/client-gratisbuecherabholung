@@ -1,6 +1,6 @@
 import React from "react";
 import { WhatsappButton } from "../../common";
-import heroImage from "../../assets/Hero.png";
+import heroImage from "../../../../public/assets/Hero.png";
 
 import "./Hero.css";
 
