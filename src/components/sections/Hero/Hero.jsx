@@ -1,5 +1,7 @@
 import React from "react";
 import { WhatsappButton } from "../../common";
+import heroImage from "../../assets/Hero.png";
+
 import "./Hero.css";
 
 const Hero = () => {
@@ -18,10 +20,7 @@ const Hero = () => {
         <WhatsappButton />
       </div>
       <div className="hero-img-container">
-        <img
-          src="/public/assets/Hero.png"
-          alt="Frau packt Bücher in einen Karton."
-        />
+        <img src={heroImage} alt="Frau packt Bücher in einen Karton." />
       </div>
     </div>
   );
