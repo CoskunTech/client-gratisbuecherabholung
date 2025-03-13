@@ -1,0 +1,68 @@
+/* Google Fonts
+  - Montserrat: all weights from 100 to 900 (light, regular, bold, etc.)
+  - Open Sans: weights from 300 to 800 (light, regular, semi-bold, etc.)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+/* Variables */
+@import url("./variables.css");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+/* Responsive Heading Sizes */
+h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem); /* Min 32px, ideal 5% width, Max 40px */
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2rem); /* Min 28px, ideal 4% width, Max 32px */
+}
+
+h3 {
+  font-size: clamp(
+    1.5rem,
+    3.5vw,
+    1.75rem
+  ); /* Min 24px, ideal 3.5% width, Max 28px */
+}
+
+h4 {
+  font-size: clamp(
+    1.25rem,
+    3vw,
+    1.5rem
+  ); /* Min 20px, ideal 3% width, Max 24px */
+}
+
+h5 {
+  font-size: clamp(
+    1rem,
+    2.5vw,
+    1.25rem
+  ); /* Min 16px, ideal 2.5% width, Max 20px */
+}
+
+h6 {
+  font-size: clamp(
+    0.875rem,
+    2vw,
+    1rem
+  ); /* Min 14px, ideal 2% width, Max 16px */
+}
