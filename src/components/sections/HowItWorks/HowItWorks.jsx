@@ -1,6 +1,9 @@
 import React from "react";
 import Card from "../../common/Card/Card";
 import "./HowItWorks.css";
+import Ablauf1 from "../../../../public/assets/Ablauf-1.png";
+import Ablauf2 from "../../../../public/assets/Ablauf-2.png";
+import Ablauf3 from "../../../../public/assets/Ablauf-3.png";
 
 const HowItWorks = () => {
   return (
@@ -15,18 +18,9 @@ const HowItWorks = () => {
             ab!
           </span>
         </p>
-        <Card
-          imageSrc={"../../../../public/assets/Ablauf-1.png"}
-          text="Schreib uns!"
-        />
-        <Card
-          imageSrc={"../../../../public/assets/Ablauf-2.png"}
-          text="Buche deinen Termin!"
-        />
-        <Card
-          imageSrc={"../../../../public/assets/Ablauf-3.png"}
-          text="Wir holen es ab!"
-        />
+        <Card imageSrc={Ablauf1} text="Schreib uns!" />
+        <Card imageSrc={Ablauf3} text="Buche deinen Termin!" />
+        <Card imageSrc={Ablauf2} text="Wir holen es ab!" />
       </div>
     </div>
   );
