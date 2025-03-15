@@ -10,11 +10,11 @@ const Footer = () => {
         <div className="footer-section">
           <h5>Folgen Sie uns</h5>
           <div className="footer-socials">
-            <a href="#" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/MehmetK.4125#_=_"
+              aria-label="Facebook"
+              target="_blank">
               <FacebookIcon />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <InstagramIcon />
             </a>
           </div>
         </div>
