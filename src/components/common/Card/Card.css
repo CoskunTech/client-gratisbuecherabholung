@@ -1,6 +1,6 @@
 .card {
-  height: 250px;
-  width: 250px;
+  height: 350px;
+  width: 300px;
 
   padding: 10px;
   background-color: var(--secondary-background-color);

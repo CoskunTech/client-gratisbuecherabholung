@@ -12,8 +12,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-links">
           <a href="#home">Startseite</a>
-          <a href="#funktioniert">So funktioniert’s</a>
-          <a href="#mission">Unsere Mission</a>
+          <a href="#funktioniert">So funktioniert es</a>
+          <a href="#mission">Unsere Aufgabe</a>
           <a href="#fragen">Fragen?</a>
           <a href="#kontakt">Kontakt</a>
           <WhatsappButton />

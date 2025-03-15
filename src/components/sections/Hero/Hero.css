@@ -16,6 +16,7 @@
   align-items: end;
   text-align: end;
   padding: 1rem 0;
+  gap: 1rem;
 }
 
 .heto-text-container p {

@@ -9,13 +9,15 @@ const Hero = () => {
     <div id="home" className="hero-container">
       <div className="heto-text-container">
         <h1>
-          Deine alten <br />
-          Bücher verdienen <br />
-          <span className="green-text">eine zweite Chance</span>
+          Wir holen
+          <span className="green-text">GRATIS</span> Bücher,
+          <br />
+          CDs, DVDs und Schallplatten ab.
         </h1>
         <p>
-          Wir holen deine alten Bücher kostenlos ab und sorgen dafür, dass sie
-          weiterverwendet werden.
+          Möchten Sie Ihre alten Bücher weitergeben? Ziehen Sie um oder brauchen
+          Platz im Regal? Wir holen sie{" "}
+          <span className="green-text">GRATIS</span> ab!
         </p>
         <WhatsappButton />
       </div>

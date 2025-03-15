@@ -69,4 +69,5 @@ h6 {
 
 .green-text {
   color: var(--primary-color);
+  font-weight: bold;
 }
