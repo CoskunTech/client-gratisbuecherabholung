@@ -1,6 +1,20 @@
 .container {
-  max-width: 1200px;
-  width: 90%;
+  max-width: var(--large-desktop);
+  width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--container-padding-desktop);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: var(--container-padding-tablet);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--container-padding-mobile);
+  }
 }

@@ -1,30 +1,38 @@
 .waw-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 80px;
+  width: 100%;
+  max-width: var(--large-desktop);
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-lg);
   font-family: Arial, sans-serif;
   color: var(--text-color);
   background: var(--secondary-background-color);
-  padding: 30px;
+  border-radius: 10px;
 }
 
 .waw-intro h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .waw-content {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--spacing-lg);
 }
 
 .waw-image-placeholder {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
   border-radius: 50%;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.waw-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .waw-text {
@@ -32,27 +40,71 @@
 }
 
 .waw-text p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
 }
 
 .waw-text2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
 }
 
 .waw-benefits {
-  margin-top: 30px;
-  text-align: left;
+  flex: 1;
+  min-width: 300px;
 }
 
 .gt-extra {
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(20px, 2vw, 24px);
   font-weight: bold;
+  margin-bottom: var(--spacing-md);
 }
 
 .waw-benefits li {
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-sm);
+  font-size: clamp(14px, 1vw, 16px);
+}
+
+@media (max-width: 1024px) {
+  .waw-container {
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .waw-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .waw-image-placeholder {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .waw-text2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .waw-benefits {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .waw-image-placeholder {
+    max-width: 250px;
+  }
+
+  .waw-container {
+    padding: var(--spacing-sm);
+  }
 }

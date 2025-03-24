@@ -9,7 +9,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-size: clamp(14px, 1vw, 16px);
   line-height: 1.6;
   color: var(--text-color);
 }
@@ -24,47 +24,57 @@ h6 {
   font-weight: bold;
   color: var(--text-color);
   line-height: 1.2;
+  margin-bottom: var(--spacing-md);
 }
 
 /* Responsive Heading Sizes */
 h1 {
-  font-size: clamp(2rem, 5vw, 2.5rem); /* Min 32px, ideal 5% width, Max 40px */
+  font-size: clamp(24px, 5vw, 40px);
+  margin-bottom: var(--spacing-lg);
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2rem); /* Min 28px, ideal 4% width, Max 32px */
+  font-size: clamp(20px, 4vw, 32px);
 }
 
 h3 {
-  font-size: clamp(
-    1.5rem,
-    3.5vw,
-    1.75rem
-  ); /* Min 24px, ideal 3.5% width, Max 28px */
+  font-size: clamp(18px, 3.5vw, 28px);
 }
 
 h4 {
-  font-size: clamp(
-    1.25rem,
-    3vw,
-    1.5rem
-  ); /* Min 20px, ideal 3% width, Max 24px */
+  font-size: clamp(16px, 3vw, 24px);
 }
 
 h5 {
-  font-size: clamp(
-    1rem,
-    2.5vw,
-    1.25rem
-  ); /* Min 16px, ideal 2.5% width, Max 20px */
+  font-size: clamp(14px, 2.5vw, 20px);
 }
 
 h6 {
-  font-size: clamp(
-    0.875rem,
-    2vw,
-    1rem
-  ); /* Min 14px, ideal 2% width, Max 16px */
+  font-size: clamp(12px, 2vw, 16px);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  font-size: clamp(14px, 1vw, 16px);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p {
+    margin-bottom: var(--spacing-sm);
+  }
 }
 
 .green-text {

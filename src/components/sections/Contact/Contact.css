@@ -1,48 +1,54 @@
 .contact-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: var(--large-desktop);
+  margin: var(--spacing-xl) auto;
   text-align: center;
-  margin-top: 100px;
 }
 
 .contact-info {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: var(--spacing-lg);
   flex-wrap: wrap;
-  margin: 40px 0;
+  margin: var(--spacing-xl) 0;
 }
 
 .contact-card {
-  background: #f7f7f7;
-  padding: 20px;
+  background: var(--secondary-background-color);
+  padding: var(--spacing-lg);
   border-radius: 10px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
 }
 
 .contact-card img {
   width: 40px;
   height: 40px;
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-sm);
 }
 
 .contact-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(16px, 1.5vw, 18px);
   font-weight: bold;
+  margin-bottom: var(--spacing-sm);
 }
 
 .contact-card p {
-  font-size: 16px;
+  font-size: clamp(14px, 1vw, 16px);
 }
 
 /* Harita kısmı */
 .contact-map {
   width: 100%;
   height: 300px;
-  margin-top: 20px;
+  margin-top: var(--spacing-lg);
 }
 
 .contact-map iframe {
@@ -50,4 +56,29 @@
   height: 100%;
   border: none;
   border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    margin: var(--spacing-lg) auto;
+  }
+
+  .contact-info {
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .contact-card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-map {
+    height: 250px;
+  }
+
+  .contact-card {
+    padding: var(--spacing-sm);
+  }
 }
