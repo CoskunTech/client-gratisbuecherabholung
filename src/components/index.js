@@ -7,5 +7,5 @@ export {
   UeberUns,
   Kontakt,
   Footer,
-} from "./Sections";
-export { WhatsAppFloatingButton } from "./UI";
+} from "./sections";
+export { WhatsAppFloatingButton } from "./ui";
