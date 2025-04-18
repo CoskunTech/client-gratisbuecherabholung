@@ -7,9 +7,8 @@ import {
   UeberUns,
   Kontakt,
   Footer,
-} from "./components/sections";
-
-import { WhatsAppFloatingButton } from "./components/ui";
+  WhatsAppFloatingButton,
+} from "./components";
 
 function App() {
   return (
