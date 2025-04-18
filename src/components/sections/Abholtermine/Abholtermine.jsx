@@ -2,12 +2,12 @@ import React from "react";
 
 const Abholtermine = () => {
   return (
-    <section id="abholtermine" className="container mx-auto px-4">
-      <h1 className="text-center text-3xl lg:text-5xl font-bold text-gray-800 my-4">
+    <section id="abholtermine" className="container px-4 mx-auto">
+      <h1 className="my-4 text-3xl font-bold text-center text-gray-800 lg:text-5xl">
         Abholtermine
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
           { tag: "Montag", ort: "Aargau · Solothurn" },
           { tag: "Dienstag", ort: "Basel und Baselland" },
@@ -17,8 +17,8 @@ const Abholtermine = () => {
         ].map((termin, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-md p-4 border-l-4 border-green-500">
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">
+            className="p-4 mx-4 bg-white border-l-4 border-r-4 border-green-500 shadow-lg rounded-xl ">
+            <h3 className="mb-2 text-xl font-semibold text-gray-700">
               {termin.tag}
             </h3>
             <p className="text-gray-500">{termin.ort}</p>
