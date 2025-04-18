@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
       href="https://wa.me/41791234567"
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition-colors w-36 h-10">
+      className="flex items-center justify-center h-10 px-4 py-2 font-bold text-white transition-colors bg-green-500 rounded-full hover:bg-green-600 w-36">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

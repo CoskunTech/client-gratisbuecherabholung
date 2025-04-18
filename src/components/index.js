@@ -8,4 +8,4 @@ export {
   Kontakt,
   Footer,
 } from "./sections";
-export { WhatsAppFloatingButton } from "./UI";
+export { WhatsAppFloatingButton } from "./comon";
