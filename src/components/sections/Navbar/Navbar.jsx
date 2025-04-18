@@ -1,5 +1,5 @@
 import React from "react";
-import { WhatsAppButton } from "../../UI";
+import { WhatsAppButton } from "../../ui";
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">

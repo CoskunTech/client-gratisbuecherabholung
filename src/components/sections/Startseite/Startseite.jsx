@@ -1,5 +1,5 @@
 import React from "react";
-import { WhatsAppButton } from "../../UI";
+import { WhatsAppButton } from "../../ui";
 
 const Startseite = () => {
   return (
