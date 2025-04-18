@@ -1,15 +1,16 @@
 import React from "react";
-import "./Footer.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Sosyal Medya Linkleri */}
-        <div className="footer-section">
-          <h5>Folgen Sie uns</h5>
-          <div className="footer-socials">
+    <footer className="bg-gray-800 text-white py-4">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-center items-center">
+          <div className="flex items-center">
+            <a href="https://www.instagram.com/buecher_abholservice?igsh=cDRkOHp5azNkMXJ0">
+              <InstagramIcon />
+            </a>
             <a
               href="https://www.facebook.com/MehmetK.4125#_=_"
               aria-label="Facebook"
@@ -18,11 +19,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Copyright Alanı */}
-      <div className="footer-bottom">
-        <p>© 2024 Firma Adı. Alle Rechte vorbehalten.</p>
+        <p className="text-center">
+          © 2024 Gratisbücher Abholung. Alle Rechte vorbehalten.
+        </p>
       </div>
     </footer>
   );

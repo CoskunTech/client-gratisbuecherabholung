@@ -1,3 +1,17 @@
-@import url("./styles/reset.css");
-@import url("./styles/variables.css");
-@import url("./styles/typography.css");
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+section {
+  padding: 2rem 0;
+}
