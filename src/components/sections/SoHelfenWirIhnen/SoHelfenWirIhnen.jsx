@@ -3,12 +3,12 @@ import React from "react";
 const SoHelfenWirIhnen = () => {
   return (
     <section id="so-helfen-wir-ihnen">
-      <div className="container mx-auto px-4">
-        <h1 className="text-center text-3xl lg:text-5xl font-bold text-gray-800 my-4">
+      <div className="container px-4 mx-auto">
+        <h1 className="my-4 text-3xl font-bold text-center text-gray-800 lg:text-5xl">
           So helfen wir Ihnen
         </h1>
         <div className="">
-          <p className="text-center text-xl lg:text-2xl font-bold text-gray-800 my-4">
+          <p className="my-4 text-xl font-bold text-center text-gray-800 lg:text-2xl">
             In drei einfachen Schritten können Sie Ihre alten Bücher
             weitergeben:
             <br />
@@ -17,13 +17,13 @@ const SoHelfenWirIhnen = () => {
               holt die Bücher bei Ihnen ab!
             </span>
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+          <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-3">
             <div className="bg-[#F1F2F4] rounded-lg shadow-lg p-6 transition-transform hover:scale-105 h-64">
-              <div className="flex flex-col items-center h-full justify-between">
+              <div className="flex flex-col items-center justify-between h-full">
                 <img
                   src={"./assets/Ablauf-1.png"}
                   alt="Ablauf1"
-                  className="object-contain mb-4 h-32"
+                  className="object-contain h-32 mb-4"
                 />
                 <p className="text-lg font-semibold text-gray-700">
                   Schreiben Sie uns!
@@ -31,11 +31,11 @@ const SoHelfenWirIhnen = () => {
               </div>
             </div>
             <div className="bg-[#F1F2F4] rounded-lg shadow-lg p-6 transition-transform hover:scale-105 h-64">
-              <div className="flex flex-col items-center h-full justify-between">
+              <div className="flex flex-col items-center justify-between h-full">
                 <img
                   src={"./assets/Ablauf-2.png"}
                   alt="Ablauf2"
-                  className="object-contain mb-4 h-32"
+                  className="object-contain h-32 mb-4"
                 />
                 <p className="text-lg font-semibold text-gray-700">
                   Bücher am Abholtag bereitstellen!
@@ -43,14 +43,15 @@ const SoHelfenWirIhnen = () => {
               </div>
             </div>
             <div className="bg-[#F1F2F4] rounded-lg shadow-lg p-6 transition-transform hover:scale-105 h-64">
-              <div className="flex flex-col items-center h-full justify-between">
+              <div className="flex flex-col items-center justify-between h-full">
                 <img
                   src={"./assets/Ablauf-3.png"}
                   alt="Ablauf3"
-                  className="object-contain mb-4 h-32"
+                  className="object-contain h-32 mb-4"
                 />
                 <p className="text-lg font-semibold text-gray-700">
-                  Wir holen Ihre Bücher kostenlos ab!
+                  Wir holen Ihre Bücher{" "}
+                  <span className="text-green-600">gratis</span> ab!
                 </p>
               </div>
             </div>
