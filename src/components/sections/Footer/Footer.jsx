@@ -4,22 +4,30 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-center items-center">
-          <div className="flex items-center">
-            <a href="https://www.instagram.com/buecher_abholservice?igsh=cDRkOHp5azNkMXJ0">
-              <InstagramIcon />
+    <footer className="py-8 text-white bg-gray-800">
+      <div className="container px-4 mx-auto">
+        <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center space-x-4">
+            <a
+              href="https://www.instagram.com/buecher_abholservice?igsh=cDRkOHp5azNkMXJ0"
+              className="text-white transition-colors duration-300 hover:text-gray-300"
+              aria-label="Instagram"
+              target="_blank">
+              <InstagramIcon fontSize="large" />
             </a>
             <a
               href="https://www.facebook.com/MehmetK.4125#_=_"
+              className="text-white transition-colors duration-300 hover:text-gray-300"
               aria-label="Facebook"
               target="_blank">
-              <FacebookIcon />
+              <FacebookIcon fontSize="large" />
             </a>
           </div>
         </div>
-        <p className="text-center">
+        <p className="px-4 mb-4 text-lg font-semibold text-center">
+          Gratis Bücher Abholung in der ganzen Schweiz und Deutschland.
+        </p>
+        <p className="text-sm text-center text-gray-300">
           © 2024 Gratisbücher Abholung. Alle Rechte vorbehalten.
         </p>
       </div>
