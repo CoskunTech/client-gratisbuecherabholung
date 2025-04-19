@@ -3,10 +3,10 @@ import React from "react";
 const WhatsAppFloatingButton = () => {
   return (
     <a
-      href="https://wa.me/41791234567"
+      href="https://wa.me/41767201353"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-colors z-50">
+      className="fixed z-50 p-3 text-white transition-colors bg-green-500 rounded-full shadow-lg bottom-6 right-6 hover:bg-green-600">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
