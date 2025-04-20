@@ -11,11 +11,6 @@ const Navbar = () => {
               <span className="text-green-600">Gratis </span>
               <span className="text-gray-800">Bücher Abholung</span>
             </h1>
-            <img
-              src="./public/assets/logo.png"
-              alt="Gratis Bücher Abholung"
-              className="w-10 h-10"
-            />
           </div>
 
           {/* Navigation Links */}
