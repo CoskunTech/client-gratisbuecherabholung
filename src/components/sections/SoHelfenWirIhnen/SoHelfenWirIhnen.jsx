@@ -2,7 +2,7 @@ import React from "react";
 
 const SoHelfenWirIhnen = () => {
   return (
-    <section id="so-helfen-wir-ihnen">
+    <section id="hilfe">
       <div className="container px-4 mx-auto">
         <h1 className="my-4 text-3xl font-bold text-center text-gray-800 lg:text-5xl">
           So helfen wir Ihnen

@@ -3,7 +3,7 @@ import { WhatsAppButton } from "../../comon";
 
 const UeberUns = () => {
   return (
-    <section id="ueber-uns" className="bg-[#F1F2F4] py-8 md:py-12 ">
+    <section id="ueberuns" className="bg-[#F1F2F4] py-8 md:py-12 ">
       <div className="container mx-auto px-4 bg-[#F1F2F4]">
         <h1 className="mb-6 text-2xl font-bold text-center text-gray-800 md:text-3xl lg:text-5xl md:mb-8">
           Hallo, ich bin Kamil
@@ -15,11 +15,16 @@ const UeberUns = () => {
           neues Zuhause und sichern damit unseren Lebensunterhalt.
         </p>
         <div className="flex flex-col gap-4 md:flex-row">
-          <div className="w-full h-64 overflow-hidden rounded-lg md:w-1/2 md:h-125">
+          <div
+            className="w-full h-64 overflow-hidden rounded-lg md:w-1/2 md:h-125"
+            onContextMenu={(e) => e.preventDefault()}>
             <img
               src={"/assets/family_photo.jpg"}
               alt="family_photo"
               className="object-cover w-full h-full rounded-lg scale-[1.8] lg:scale-[1] translate-y-[-5%] md:translate-y-0 object-[0%30%] md:object-[0%40%]"
+              draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
+              style={{ userSelect: "none", pointerEvents: "none" }}
             />
           </div>
 

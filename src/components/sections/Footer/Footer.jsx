@@ -24,11 +24,8 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <p className="px-4 mb-4 text-lg font-semibold text-center">
-          Gratis Bücher Abholung in der ganzen Schweiz und Deutschland.
-        </p>
         <p className="text-sm text-center text-gray-300">
-          © 2024 Gratisbücher Abholung. Alle Rechte vorbehalten.
+          © 2025 Gratisbücher Abholung. Alle Rechte vorbehalten.
         </p>
       </div>
     </footer>
