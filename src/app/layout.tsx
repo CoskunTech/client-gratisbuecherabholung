@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Lora, Inter } from "next/font/google";
 import "./globals.css";
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Gratis Bücher Abholung Basel",
@@ -13,8 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
-      <body className="antialiased">{children}</body>
+    <html lang="de" className={`${lora.variable} ${inter.variable}`}>
+      <body className="bg-background text-on-surface font-body antialiased">
+        {children}
+      </body>
     </html>
   );
 }
