@@ -29,12 +29,12 @@ export function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-xs font-bold tracking-wider uppercase text-primary/70 hover:text-primary transition-colors"
+                className="text-xs font-bold tracking-wider uppercase whitespace-nowrap text-primary/70 hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -43,7 +43,7 @@ export function Navbar() {
         </ul>
 
         {/* Desktop WhatsApp button */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <WhatsAppButton />
         </div>
 
@@ -51,7 +51,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="md:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
+          className="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
           aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
@@ -96,7 +96,7 @@ export function Navbar() {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-background/95 backdrop-blur-md border-t border-outline-variant/30 px-6 py-4"
+          className="lg:hidden bg-background/95 backdrop-blur-md border-t border-outline-variant/30 px-6 py-4"
         >
           <ul className="flex flex-col gap-1 mb-4">
             {NAV_LINKS.map((link) => (
