@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Leaf } from "lucide-react";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export function Hero() {
@@ -11,12 +10,6 @@ export function Hero() {
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 md:flex-row md:gap-16">
         {/* Text side */}
         <div className="flex-1 text-center md:text-left">
-          {/* Eco badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest">
-            <Leaf className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-            Nachhaltige Bücherabholung
-          </div>
-
           {/* Headline */}
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
             Wir holen Ihre Bücher gratis ab.
