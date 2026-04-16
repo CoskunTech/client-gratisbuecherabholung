@@ -12,7 +12,8 @@ export function Hero() {
         <div className="flex-1 text-center md:text-left">
           {/* Headline */}
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
-            Wir holen Ihre Bücher gratis ab.
+            Wir holen Ihre Bücher{" "}
+            <span className="text-[#15803d]">gratis</span> ab.
           </h1>
 
           {/* Subtext */}
