@@ -5,51 +5,85 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev       # start Vite dev server
-npm run build     # production build
-npm run preview   # preview production build
-npm run lint      # ESLint check
+npm run dev      # start Next.js dev server (http://localhost:3000)
+npm run build    # production build
+npm run start    # serve production build locally
+npm run lint     # ESLint check
 ```
 
 No test suite is configured.
 
+## Project context
+
+German-language landing site for a Basel, Switzerland book collection service ("Gratis Bücher Abholung"). Operated by a small family business. Primary audience is 60+ German-speaking Swiss residents, with a mixed younger audience as well.
+
+**Branch layout:**
+- `main` — live Vite+React site on Netlify (do not touch)
+- `nextjs-migration` — this branch; Next.js 14 rewrite targeting Vercel
+
+**Old Vite source** is preserved in `old-vite/` for reference only. Do not edit it.
+
+## Tech stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS (PostCSS setup, `tailwind.config.ts`)
+- `next/font/google` for fonts (Lora + Inter — no external CDN requests)
+
 ## Architecture
 
-Single-page React landing site (German-language) for a Basel, Switzerland book collection service. The page is one scrollable document — all sections are rendered in `App.jsx` in order and linked via anchor IDs.
+Single-page site. All page sections live in `src/app/page.tsx` (or imported as components). Navigation uses anchor links (`#section-id`). No client-side routing needed.
 
-**Tailwind setup:** Uses Tailwind v4 with the `@tailwindcss/vite` plugin (not PostCSS). The config is minimal; custom tokens are NOT yet wired into `tailwind.config.js` — they currently live only in `reference/stitch-export/code.html`.
-
-**MUI is installed** (`@mui/material`, `@mui/icons-material`) but not actively used in current components.
-
-## Component structure
-
+**Planned `src/` structure:**
 ```
-src/components/
-  sections/        # one folder per page section (Navbar, Startseite, SoHelfenWirIhnen,
-  │                #   Abholtermine, UeberUns, Kontakt, Footer)
-  │                # HamburgerNavbar lives inside sections/Navbar/
-  comon/           # shared/common components (note: typo is intentional, keep it)
-                   # WhatsAppButton (inline), WhatsAppFloatingButton (fixed bottom-right)
+src/
+  app/
+    layout.tsx          # root layout: fonts, metadata, lang="de"
+    page.tsx            # home page, composes all sections
+    globals.css         # @tailwind directives + heading font rule
+  components/
+    sections/           # one component per page section
+    ui/                 # shared primitives (buttons, badges, etc.)
 ```
 
-Each component folder exports via its own `index.js`. The top-level `src/components/index.js` re-exports everything for clean imports in `App.jsx`.
+## Design system
 
-## Design reference
+Reference files in `reference/stitch-export/`:
+- `DESIGN.md` — design principles ("The Editorial Conservator")
+- `code.html` — original Stitch export with full reference implementation
 
-`reference/stitch-export/` contains the target redesign:
-- `DESIGN.md` — full design system spec ("The Editorial Conservator" theme)
-- `code.html` — complete Tailwind config with all design tokens (colors, typography) and a reference HTML implementation
+**Active token decisions (override anything in code.html):**
+- Primary: `#0f5238` (forest green)
+- Background: `#f9f9f7` (warm off-white)
+- Heading font: **Lora** (serif) — warm, bookish, accessible for older audience
+- Body font: **Inter** (sans-serif) — maximum screen readability
+- Min font size: 16px (`text-base`)
 
-Key design decisions from the spec:
-- **Colors:** `primary: #0f5238` (deep forest green), `background: #f9f9f7` (warm off-white)
-- **Fonts:** Manrope for headlines, Plus Jakarta Sans for body
-- **No borders** for section separation — use background color shifts only
-- **Glassmorphism** on the floating WhatsApp button (80% opacity + 24px backdrop-blur)
+**All color tokens** are in `tailwind.config.ts` as named classes:
+`primary`, `secondary`, `surface`, `surface-container-low`, `on-surface`, `outline-variant`, etc.
+Use these class names — never raw hex values in components.
 
-## WhatsApp number
+**Design rules (from DESIGN.md):**
+- No 1px borders for section separation — use background color shifts (`surface-container-low` vs `surface`)
+- Shadows: use `on-surface` at low opacity (6%), blur 32–48px — never pure black
+- WhatsApp floating button: glassmorphism (`surface-container-lowest/80 backdrop-blur-lg`)
+- Heading tracking: `-0.02em` (tight)
+- Buttons: `rounded-xl` (1.5rem), generous horizontal padding
 
-Hardcoded in two places: `src/components/comon/WhatsAppButton/WhatsAppButton.jsx` and `src/components/comon/WhatsAppFloatingButton/WhatsAppFloatingButton.jsx`. Number: `+41767201353`.
+## Key content
 
-## Active branch
+- **WhatsApp number:** `+41767201353` (wa.me/41767201353)
+- **Service areas:** Montag → Aargau/Solothurn, Dienstag → Basel/Baselland, Mittwoch → Zürich, Donnerstag → Zürich, Freitag → Basel/Baselland
+- **Legal pages required:** Impressum, Datenschutz (DSG), AGB — content pending from client
 
-`nextjs-migration` — a Next.js migration is in progress. The `main` branch holds the current Vite/React version.
+## Page sections (in order)
+
+1. Navbar
+2. Hero (Startseite)
+3. So helfen wir Ihnen (3-step process)
+4. Abholtermine (pickup schedule by day)
+5. Zahlen (stats — placeholder until client provides real numbers)
+6. Über uns / Hallo ich bin Kamil (real photo pending)
+7. Kundenstimmen (testimonials — placeholder)
+8. Kontakt (map + contact info)
+9. Footer (Impressum, Datenschutz, AGB links)
