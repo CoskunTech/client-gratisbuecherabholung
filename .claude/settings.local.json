@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\src\\\\components\\\\ui\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\src\\\\components\\\\sections\")",
+      "Bash(npm install:*)",
+      "Bash(cp -r \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\old-vite\\\\public\\\\assets\" \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\public\\\\assets\")",
+      "Bash(cp -r \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\old-vite\\\\public\\\\robots.txt\" \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\public\\\\robots.txt\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\public\\\\assets\")",
+      "Bash(cp -r \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\old-vite\\\\public\\\\assets/.\" \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\public\\\\assets/\")",
+      "Bash(cp \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\old-vite\\\\public\\\\robots.txt\" \"C:\\\\Users\\\\Abdullah V Çoşkun\\\\Desktop\\\\client-gratisbuecherabholung\\\\public\\\\robots.txt\")"
     ]
   }
 }

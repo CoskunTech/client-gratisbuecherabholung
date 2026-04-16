@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
+import { Navbar } from "@/components/sections/Navbar";
+import { Footer } from "@/components/sections/Footer";
+import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
 import "./globals.css";
 
 const lora = Lora({
@@ -30,7 +33,10 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${lora.variable} ${inter.variable}`}>
       <body className="bg-background text-on-surface font-body antialiased">
+        <Navbar />
+        <WhatsAppFloatingButton />
         {children}
+        <Footer />
       </body>
     </html>
   );
