@@ -44,7 +44,7 @@ export function Hero() {
         </div>
 
         {/* Image side */}
-        <div className="relative w-full">
+        <div className="relative w-full order-last max-w-[400px] mx-auto md:max-w-none md:order-none">
           {/* Glow */}
           <div
             className="absolute inset-0 bg-primary-container/20 rounded-full blur-3xl -z-10 scale-90"
