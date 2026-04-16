@@ -1,20 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Home,
-  HelpCircle,
-  Calendar,
-  Users,
-  Phone,
-  X,
-  Menu,
-  MapPin,
-} from "lucide-react";
+import { Home, HelpCircle, Calendar, Users, Phone, X, Menu } from "lucide-react";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
-const PHONE = "+41 76 720 13 53";
-const PHONE_HREF = "tel:+41767201353";
 
 const NAV_LINKS = [
   { label: "Startseite", href: "#startseite", icon: Home },
@@ -114,11 +103,6 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Tagline */}
-          <p className="px-6 py-3 text-sm text-on-surface-variant border-b border-outline-variant/20">
-            Ihre Bücher — kostenlos abgeholt seit 2021
-          </p>
-
           {/* Nav items */}
           <nav className="flex-1 overflow-y-auto">
             <ul>
@@ -166,20 +150,6 @@ export function Navbar() {
             </div>
           </nav>
 
-          {/* Mini footer */}
-          <div className="px-6 py-4 border-t border-outline-variant/30 flex flex-col gap-2">
-            <a
-              href={PHONE_HREF}
-              className="flex items-center gap-2 text-base text-on-surface-variant hover:text-primary transition-colors"
-            >
-              <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
-              {PHONE}
-            </a>
-            <span className="flex items-center gap-2 text-base text-on-surface-variant">
-              <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
-              Basel &amp; Umgebung
-            </span>
-          </div>
         </div>
       )}
     </>
