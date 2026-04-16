@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { Phone, MessageCircle } from "lucide-react";
 
 export function Hero() {
   return (
@@ -24,12 +24,21 @@ export function Hero() {
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
             <a
-              href="#kontakt"
-              className="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg transition-all hover:shadow-2xl hover:-translate-y-0.5"
+              href="tel:+41767201353"
+              className="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg transition-all hover:shadow-2xl hover:-translate-y-0.5"
             >
-              Schreiben Sie uns
+              <Phone className="w-5 h-5 shrink-0" aria-hidden="true" />
+              Jetzt anrufen
             </a>
-            <WhatsAppButton />
+            <a
+              href="https://wa.me/41767201353"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-primary hover:text-on-primary hover:-translate-y-0.5"
+            >
+              <MessageCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
+              WhatsApp
+            </a>
           </div>
         </div>
 
