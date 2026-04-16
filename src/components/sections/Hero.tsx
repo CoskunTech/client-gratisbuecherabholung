@@ -7,9 +7,9 @@ export function Hero() {
       id="startseite"
       className="overflow-hidden px-6 pt-16 pb-20 md:pt-24 md:pb-28"
     >
-      <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 md:flex-row md:gap-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 items-center gap-12 md:grid-cols-[1.1fr_0.9fr] md:gap-16">
         {/* Text side */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="text-center md:text-left">
           {/* Headline */}
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
             Wir holen Ihre Bücher{" "}
@@ -44,7 +44,7 @@ export function Hero() {
         </div>
 
         {/* Image side */}
-        <div className="flex-1 relative w-full max-w-lg md:max-w-none">
+        <div className="relative w-full">
           {/* Glow */}
           <div
             className="absolute inset-0 bg-primary-container/20 rounded-full blur-3xl -z-10 scale-90"
