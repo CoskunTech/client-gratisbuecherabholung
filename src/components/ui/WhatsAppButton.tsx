@@ -14,13 +14,13 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-export function WhatsAppButton() {
+export function WhatsAppButton({ fullWidth = false }: { fullWidth?: boolean }) {
   return (
     <a
       href={WA_HREF}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 bg-secondary text-on-secondary px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-150 hover:scale-95 shadow-lg shadow-secondary/20"
+      className={`${fullWidth ? "flex w-full justify-center" : "inline-flex"} items-center gap-2 bg-secondary text-on-secondary px-6 py-3 rounded-full text-sm font-bold transition-all duration-150 hover:scale-95 shadow-lg shadow-secondary/20`}
     >
       <WhatsAppIcon className="w-4 h-4 shrink-0" />
       WhatsApp
