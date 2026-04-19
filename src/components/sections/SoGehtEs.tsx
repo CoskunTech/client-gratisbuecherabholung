@@ -1,65 +1,76 @@
-import { MessageCircle, CalendarCheck, Truck } from "lucide-react";
-
-const STEPS = [
+const steps = [
   {
-    icon: MessageCircle,
-    title: "Kontaktieren Sie uns",
-    description:
-      "Senden Sie uns eine Nachricht per WhatsApp oder rufen Sie uns an. Teilen Sie uns einfach mit, was Sie abgeben möchten.",
+    num: "01",
+    arrow: "→",
+    title: "Sie melden sich",
+    desc: "Schreiben Sie uns via WhatsApp, Facebook oder E-Mail — und teilen Sie uns Ihren Standort, die ungefähre Anzahl der Bücher und wenn möglich ein paar Fotos mit.",
+    mono: "WhatsApp · Facebook · E-Mail",
   },
   {
-    icon: CalendarCheck,
-    title: "Termin vereinbaren",
-    description:
-      "Wir finden gemeinsam einen passenden Zeitpunkt für die Abholung bei Ihnen vor Ort – kostenlos und unkompliziert.",
+    num: "02",
+    arrow: "→",
+    title: "Wir vereinbaren einen Termin",
+    desc: "Wir melden uns zurück und schlagen einen Termin vor, der zu unserer Route passt. Meist innert weniger Tage.",
+    mono: "Antwort meist am selben Tag",
   },
   {
-    icon: Truck,
-    title: "Wir holen ab",
-    description:
-      "Unser Team kommt vorbei und nimmt Ihre Bücherschätze gratis mit. Kein Aufwand für Sie.",
+    num: "03",
+    arrow: "↓",
+    title: "Wir kommen und holen ab",
+    desc: "Wir kommen pünktlich zu Ihnen, nehmen die Bücher entgegen und kümmern uns um alles Weitere. Ehrlich, unkompliziert — ganz ohne grosses Aufheben.",
+    mono: "Persönlich · Kostenlos · Unkompliziert",
   },
-] as const;
+];
 
 export function SoGehtEs() {
   return (
     <section
-      id="so-helfen-wir"
-      className="py-24 px-6 bg-surface-container-low"
+      id="ablauf"
+      className="py-[clamp(72px,10vw,130px)] bg-paper-deep border-t border-b border-line"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl font-bold text-primary mb-4 sm:text-4xl md:text-5xl">
-            So geht&apos;s
-          </h2>
-          <div className="h-1.5 w-20 bg-secondary mx-auto rounded-full" />
+      <div className="wrap">
+        <div className="flex items-end justify-between gap-8 mb-14 pb-5 border-b border-line flex-col md:flex-row">
+          <div>
+            <div className="flex items-center gap-[10px] mb-[14px] font-mono text-[12px] tracking-[0.12em] uppercase text-forest before:content-[''] before:w-6 before:h-px before:bg-forest">
+              02 — So läuft es ab
+            </div>
+            <h2 className="font-manrope font-extrabold text-[clamp(32px,4.5vw,56px)] leading-[1.02] tracking-[-0.03em] max-w-[720px]">
+              Drei Schritte. Kein Papierkram.
+              <br />
+              Keine versteckten Kosten.
+            </h2>
+          </div>
+          <p className="text-ink-muted text-[15px] max-w-[320px] md:text-right">
+            Vom ersten Kontakt bis zur Abholung — meist innerhalb einer Woche.
+          </p>
         </div>
 
-        {/* Steps grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {STEPS.map((step) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={step.title}
-                className="group bg-surface p-10 rounded-xl transition-all duration-300 hover:shadow-xl border-b-4 border-transparent hover:border-secondary"
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          {steps.map(({ num, arrow, title, desc, mono }, idx) => (
+            <div
+              key={num}
+              className={`py-10 px-0 md:px-8 ${
+                idx > 0 ? "border-t md:border-t-0 md:border-l border-line" : ""
+              } ${idx === 0 ? "md:pl-0" : ""}`}
+            >
+              <span
+                className="font-manrope font-extrabold text-[72px] leading-[0.9] tracking-[-0.04em] text-forest block mb-7"
+                style={{ opacity: 0.92 }}
               >
-                <div className="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-300 group-hover:scale-110">
-                  <Icon
-                    className="w-8 h-8 text-primary"
-                    aria-hidden="true"
-                  />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-on-surface mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-on-surface-variant leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            );
-          })}
+                {num}
+                <sup className="text-[14px] text-mint font-semibold ml-1.5 tracking-normal align-super">
+                  {arrow}
+                </sup>
+              </span>
+              <h3 className="font-manrope font-extrabold text-[26px] tracking-[-0.02em] mb-3">
+                {title}
+              </h3>
+              <p className="text-ink-soft text-[15.5px] max-w-[320px]">{desc}</p>
+              <span className="font-mono text-[12px] tracking-[0.04em] uppercase text-ink-muted mt-5 block">
+                {mono}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

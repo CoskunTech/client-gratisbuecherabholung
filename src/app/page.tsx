@@ -1,20 +1,20 @@
 import { Hero } from "@/components/sections/Hero";
+import { WasWirAbholen } from "@/components/sections/WasWirAbholen";
 import { SoGehtEs } from "@/components/sections/SoGehtEs";
 import { Abholtermine } from "@/components/sections/Abholtermine";
-import { Zahlen } from "@/components/sections/Zahlen";
 import { UeberUns } from "@/components/sections/UeberUns";
-import { Kundenstimmen } from "@/components/sections/Kundenstimmen";
+import { Gallery } from "@/components/sections/Gallery";
 import { Kontakt } from "@/components/sections/Kontakt";
 
 export default function Home() {
   return (
-    <main className="pt-[72px]">
+    <main>
       <Hero />
+      <WasWirAbholen />
       <SoGehtEs />
       <Abholtermine />
-      <Zahlen />
       <UeberUns />
-      <Kundenstimmen />
+      <Gallery />
       <Kontakt />
     </main>
   );

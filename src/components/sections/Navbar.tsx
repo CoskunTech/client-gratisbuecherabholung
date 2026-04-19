@@ -1,157 +1,128 @@
 "use client";
 
-import { useState } from "react";
-import { Home, HelpCircle, Calendar, Users, Phone, X, Menu } from "lucide-react";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
+const navItems = [
+  { href: "#start", label: "Startseite" },
+  { href: "#ablauf", label: "Ablauf" },
+  { href: "#termine", label: "Abholtermine" },
+  { href: "#ueber", label: "Über uns" },
+  { href: "#fotos", label: "Fotos" },
+  { href: "#kontakt", label: "Kontakt" },
+];
 
-const NAV_LINKS = [
-  { label: "Startseite", href: "#startseite", icon: Home },
-  { label: "So geht's", href: "#so-helfen-wir", icon: HelpCircle },
-  { label: "Abholtermine", href: "#abholtermine", icon: Calendar },
-  { label: "Über uns", href: "#ueber-uns", icon: Users },
-] as const;
-
-const CONTACT_LINK = { label: "Kontakt", href: "#kontakt", icon: Phone };
+const WA_HREF = "https://wa.me/41767201353";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeId, setActiveId] = useState("start");
 
-  const closeMenu = () => setMobileOpen(false);
+  useEffect(() => {
+    const sectionIds = ["start", "ablauf", "termine", "ueber", "fotos", "kontakt"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px" }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <>
-      <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
-        <nav
-          className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
-          aria-label="Hauptnavigation"
+    <nav className="sticky top-0 z-50 bg-paper/90 backdrop-blur-[12px] border-b border-line">
+      <div className="wrap flex items-center justify-between h-[72px]">
+        {/* Logo */}
+        <a
+          href="#"
+          className="flex items-center gap-3 font-manrope font-extrabold text-[16px] tracking-[-0.01em] text-forest"
+          aria-label="Gratis Bücher Abholung — Startseite"
         >
-          {/* Logo */}
-          <a
-            href="#startseite"
-            className="font-heading text-xl font-bold tracking-tight text-primary"
-          >
-            Gratis Bücher Abholung
-          </a>
+          <Image
+            src="/assets/Logo.png"
+            alt="Gratis Bücher Abholung Logo"
+            width={40}
+            height={40}
+            className="h-10 w-auto flex-shrink-0"
+          />
+          <span className="flex flex-col leading-none">
+            <span>Gratis Bücher Abholung</span>
+            <span className="text-ink-muted font-medium text-[12px] tracking-normal">
+              Seit 2021
+            </span>
+          </span>
+        </a>
 
-          {/* Desktop links */}
-          <ul className="hidden lg:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-xs font-bold tracking-wider uppercase whitespace-nowrap text-primary/70 hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a
-                href={CONTACT_LINK.href}
-                className="text-xs font-bold tracking-wider uppercase whitespace-nowrap text-primary/70 hover:text-primary transition-colors"
-              >
-                {CONTACT_LINK.label}
-              </a>
-            </li>
-          </ul>
-
-          {/* Desktop WhatsApp button */}
-          <div className="hidden lg:block">
-            <WhatsAppButton />
-          </div>
-
-          {/* Mobile hamburger button */}
-          <button
-            type="button"
-            onClick={() => setMobileOpen(true)}
-            className="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            aria-label="Menü öffnen"
-          >
-            <Menu className="w-6 h-6" aria-hidden="true" />
-          </button>
-        </nav>
-      </header>
-
-      {/* Full-screen mobile overlay */}
-      {mobileOpen && (
-        <div
-          id="mobile-menu"
-          className="fixed inset-0 z-50 flex flex-col bg-background lg:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Navigationsmenü"
-        >
-          {/* Overlay header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-outline-variant/30">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map(({ href, label }) => (
             <a
-              href="#startseite"
-              onClick={closeMenu}
-              className="font-heading text-xl font-bold tracking-tight text-primary"
+              key={href}
+              href={href}
+              className={`text-[14px] font-medium transition-colors duration-150 ${
+                activeId === href.slice(1)
+                  ? "text-ink font-semibold"
+                  : "text-ink-soft hover:text-forest"
+              }`}
             >
-              Gratis Bücher Abholung
+              {label}
             </a>
-            <button
-              type="button"
-              onClick={closeMenu}
-              className="p-2 rounded-lg text-primary hover:bg-surface-container transition-colors"
-              aria-label="Menü schließen"
+          ))}
+          <a
+            href={WA_HREF}
+            target="_blank"
+            rel="noopener"
+            className="bg-whatsapp text-white px-[18px] py-[10px] rounded-full font-semibold text-[14px] inline-flex items-center gap-2 hover:bg-whatsapp-deep hover:-translate-y-px transition-all duration-150"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width={16} height={16} aria-hidden="true">
+              <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3zM12 2a10 10 0 00-8.7 14.9L2 22l5.3-1.4A10 10 0 1012 2z" />
+            </svg>
+            Schreiben Sie uns
+          </a>
+        </div>
+
+        {/* Hamburger */}
+        <button
+          className="md:hidden p-2 cursor-pointer bg-transparent border-none"
+          aria-label="Menü"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <span className="block w-6 h-0.5 bg-ink my-[5px]" />
+          <span className="block w-6 h-0.5 bg-ink my-[5px]" />
+          <span className="block w-6 h-0.5 bg-ink my-[5px]" />
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-line px-[clamp(20px,4vw,56px)] py-4 bg-paper">
+          {navItems.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="block py-3 text-[16px] font-medium border-b border-line last:border-none"
+              onClick={() => setMobileOpen(false)}
             >
-              <X className="w-6 h-6" aria-hidden="true" />
-            </button>
-          </div>
-
-          {/* Nav items */}
-          <nav className="flex-1 overflow-y-auto">
-            <ul>
-              {NAV_LINKS.map((link) => {
-                const Icon = link.icon;
-                return (
-                  <li
-                    key={link.href}
-                    className="border-b border-outline-variant/20"
-                  >
-                    <a
-                      href={link.href}
-                      onClick={closeMenu}
-                      className="flex items-center gap-4 w-full px-6 py-4 text-xl font-medium text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors"
-                    >
-                      <Icon
-                        className="w-5 h-5 text-primary shrink-0"
-                        aria-hidden="true"
-                      />
-                      {link.label}
-                    </a>
-                  </li>
-                );
-              })}
-
-              {/* Divider before Kontakt */}
-              <li className="border-b border-outline-variant/20">
-                <a
-                  href={CONTACT_LINK.href}
-                  onClick={closeMenu}
-                  className="flex items-center gap-4 w-full px-6 py-4 text-xl font-semibold text-primary hover:bg-surface-container active:bg-surface-container-high transition-colors"
-                >
-                  <CONTACT_LINK.icon
-                    className="w-5 h-5 text-primary shrink-0"
-                    aria-hidden="true"
-                  />
-                  {CONTACT_LINK.label}
-                </a>
-              </li>
-            </ul>
-
-            {/* WhatsApp CTA */}
-            <div className="px-6 py-6">
-              <WhatsAppButton fullWidth />
-            </div>
-          </nav>
-
+              {label}
+            </a>
+          ))}
+          <a
+            href={WA_HREF}
+            target="_blank"
+            rel="noopener"
+            className="block py-3 text-[16px] font-bold text-whatsapp"
+            onClick={() => setMobileOpen(false)}
+          >
+            WhatsApp schreiben →
+          </a>
         </div>
       )}
-    </>
+    </nav>
   );
 }

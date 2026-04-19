@@ -3,17 +3,84 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --font-heading: "";
-    --font-body: "";
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0;
   }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: inherit; text-decoration: none; }
+  * { box-sizing: border-box; }
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading), Georgia, serif;
+@layer components {
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 56px);
   }
+}
+
+/* Stripe backgrounds */
+.stripes-diagonal {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 14px,
+    rgba(26, 26, 26, 0.031) 14px 15px
+  );
+}
+
+.stripes-diagonal-green {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 20px,
+    rgba(15, 82, 56, 0.063) 20px 21px
+  );
+}
+
+/* Gallery figure stripes via ::before */
+.gallery-figure-stripes {
+  position: relative;
+}
+.gallery-figure-stripes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 10px,
+    rgba(255, 255, 255, 0.031) 10px 11px
+  );
+  z-index: 0;
+}
+
+/* Gallery infinite carousel */
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.carousel-track {
+  animation: carousel-scroll 36s linear infinite;
+  will-change: transform;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* WhatsApp floating button pulse ring */
+@keyframes wa-pulse {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.wa-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  opacity: 0.4;
+  animation: wa-pulse 2.4s ease-out infinite;
 }

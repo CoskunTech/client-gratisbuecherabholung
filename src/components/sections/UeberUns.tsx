@@ -1,54 +1,56 @@
 import Image from "next/image";
-import { BookOpen } from "lucide-react";
 
 export function UeberUns() {
   return (
-    <section id="ueber-uns" className="py-24 px-6 md:py-32">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-20">
-        {/* Photo side */}
-        <div className="relative group">
-          {/* Decorative offset background */}
-          <div className="absolute -top-4 -left-4 w-full h-full bg-secondary-container rounded-xl -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
-          <Image
-            src="/assets/family_photo.jpg"
-            alt="Kamil und sein Sohn – Gratis Bücher Abholung Basel"
-            width={600}
-            height={700}
-            className="w-full rounded-xl shadow-2xl object-cover"
-          />
-        </div>
-
-        {/* Text side */}
-        <div>
-          <p className="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-4">
-            Unsere Geschichte
-          </p>
-          <h2 className="font-heading text-4xl font-bold text-primary mb-8 md:text-5xl">
-            Hallo, ich bin Kamil
-          </h2>
-          <p className="text-lg text-on-surface-variant leading-relaxed mb-6">
-            Zusammen mit meinem Sohn habe ich es mir zur Aufgabe gemacht, alten
-            Büchern eine zweite Chance zu geben. Was als kleines Hobby begann,
-            hat sich zu einem Herzensprojekt für kulturelle Nachhaltigkeit
-            entwickelt.
-          </p>
-          <p className="text-lg text-on-surface-variant leading-relaxed mb-8">
-            Wir glauben, dass jedes Buch eine Geschichte hat, die nicht auf dem
-            Dachboden enden sollte. Wir sortieren, kuratieren und spenden die
-            gesammelten Werke an Orte, wo sie wieder geschätzt werden.
-          </p>
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 p-4 bg-surface-container-low rounded-xl">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shrink-0">
-              <BookOpen
-                className="w-5 h-5 text-on-primary"
-                aria-hidden="true"
-              />
+    <section id="ueber" className="py-[clamp(72px,10vw,130px)]">
+      <div className="wrap">
+        <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-[clamp(32px,5vw,80px)] items-center">
+          {/* Photo */}
+          <div className="relative aspect-[4/5] rounded-[10px] border border-line-strong overflow-hidden">
+            <Image
+              src="/assets/family_photo.png"
+              alt="Kamil und Mustafa — Gratis Bücher Abholung"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute left-5 bottom-5 right-5 bg-ink/90 text-paper px-4 py-3.5 rounded-[6px] text-[13px] flex justify-between gap-4 z-10">
+              <span>Kamil</span>
+              <span><b className="text-mint font-medium">Mustafa</b></span>
             </div>
-            <span className="font-bold text-primary">
-              Kulturelle Nachhaltigkeit seit 2021
-            </span>
+          </div>
+
+          {/* Text */}
+          <div>
+            <div className="flex items-center gap-[10px] mb-[14px] font-mono text-[12px] tracking-[0.12em] uppercase text-forest before:content-[''] before:w-6 before:h-px before:bg-forest">
+              04 — Über uns
+            </div>
+            <h2 className="font-manrope font-extrabold text-[clamp(32px,4.2vw,52px)] leading-[1.02] tracking-[-0.03em] mb-6">
+              Hallo, wir sind Kamil und Mustafa.
+            </h2>
+            <p className="text-ink-soft text-[16px] max-w-[520px]">
+              Seit 2021 sind wir — Vater und Sohn — in der Deutschschweiz unterwegs, um Bücher,
+              Schallplatten, CDs und DVDs direkt bei Ihnen abzuholen. Was bei uns landet, findet
+              einen neuen Platz — bei Antiquariaten, auf Flohmärkten oder bei Sammlern und Lesern.
+            </p>
+            <p className="text-ink-soft text-[16px] max-w-[520px] mt-[18px]">
+              Uns ist wichtig: Wir kommen verlässlich, pünktlich und mit echter Freude an der Sache.
+              Sie müssen sich um nichts kümmern — das ist unser Job.
+            </p>
+
+            <div className="grid grid-cols-3 gap-6 mt-10 pt-7 border-t border-line">
+              {[
+                { n: "500+", l: "Zufriedene Kunden" },
+                { n: "10.000+", l: "Bücher weitergegeben" },
+                { n: "Seit 2021", l: "Familienbetrieb" },
+              ].map(({ n, l }) => (
+                <div key={l}>
+                  <span className="font-manrope font-extrabold text-[32px] text-ink tracking-[-0.02em] block">
+                    {n}
+                  </span>
+                  <span className="text-[13px] text-ink-muted mt-1 block">{l}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

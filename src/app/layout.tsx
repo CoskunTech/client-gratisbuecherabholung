@@ -1,28 +1,35 @@
 import type { Metadata } from "next";
-import { Lora, Inter } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
 import "./globals.css";
 
-const lora = Lora({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-heading",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Gratis Bücher Abholung Basel",
+  title: "Gratis Bücher Abholung",
   description:
-    "Wir holen gratis Bücher, CDs, DVDs und Schallplatten ab – in Basel, Baselland, Zürich, Aargau und Solothurn.",
+    "Wir holen Bücher, CDs, DVDs und Schallplatten bei Ihnen ab — sorgfältig ausgewählt, in der Deutschschweiz.",
 };
 
 export default function RootLayout({
@@ -31,8 +38,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${lora.variable} ${inter.variable}`}>
-      <body className="bg-background text-on-surface font-body antialiased">
+    <html
+      lang="de"
+      className={`${manrope.variable} ${jakarta.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="bg-paper text-ink font-jakarta antialiased text-[17px] leading-[1.55]">
         <Navbar />
         <WhatsAppFloatingButton />
         {children}
