@@ -6,16 +6,21 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <main className="pt-[72px] min-h-screen">
+    <main className="pt-[72px] min-h-screen bg-paper">
       <div className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="font-heading text-4xl font-bold text-primary mb-10">
-          Impressum
-        </h1>
+        <div className="mb-10">
+          <div className="flex items-center gap-[10px] mb-4 font-mono text-[12px] tracking-[0.12em] uppercase text-forest before:content-[''] before:w-6 before:h-px before:bg-forest">
+            Legal
+          </div>
+          <h1 className="font-manrope font-extrabold text-[clamp(32px,4vw,48px)] leading-[1.05] tracking-[-0.03em] text-ink">
+            Impressum
+          </h1>
+        </div>
 
-        {/* TODO: Replace with verified legal content from client (Mustafa/Kamil) */}
-        <div className="prose prose-lg text-on-surface-variant space-y-8">
+        {/* TODO: Replace with verified legal content from Mustafa/Kamil */}
+        <div className="flex flex-col gap-8 text-ink-soft text-[16px] leading-relaxed">
           <section>
-            <h2 className="font-heading text-2xl font-bold text-on-surface mb-3">
+            <h2 className="font-manrope font-bold text-[22px] tracking-[-0.02em] text-ink mb-3">
               Angaben gemäss Art. 69 des Schweizer Datenschutzgesetzes
             </h2>
             <p>[Name des Inhabers]</p>
@@ -25,38 +30,31 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="font-heading text-2xl font-bold text-on-surface mb-3">
+            <h2 className="font-manrope font-bold text-[22px] tracking-[-0.02em] text-ink mb-3">
               Kontakt
             </h2>
             <p>
               Telefon:{" "}
-              <a
-                href="tel:+41767201353"
-                className="text-primary hover:underline"
-              >
+              <a href="tel:+41767201353" className="text-forest hover:underline">
                 +41 76 720 13 53
               </a>
             </p>
             <p>
               E-Mail:{" "}
-              <a
-                href="mailto:buecher_abholservice@gmx.ch"
-                className="text-primary hover:underline"
-              >
+              <a href="mailto:buecher_abholservice@gmx.ch" className="text-forest hover:underline">
                 buecher_abholservice@gmx.ch
               </a>
             </p>
           </section>
 
           <section>
-            <h2 className="font-heading text-2xl font-bold text-on-surface mb-3">
+            <h2 className="font-manrope font-bold text-[22px] tracking-[-0.02em] text-ink mb-3">
               Haftungsausschluss
             </h2>
             <p>
-              Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine
-              Haftung für die Inhalte externer Links. Für den Inhalt der
-              verlinkten Seiten sind ausschliesslich deren Betreiber
-              verantwortlich.
+              Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die
+              Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschliesslich
+              deren Betreiber verantwortlich.
             </p>
           </section>
         </div>

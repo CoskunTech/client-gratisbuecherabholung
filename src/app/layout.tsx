@@ -29,7 +29,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Gratis Bücher Abholung",
   description:
-    "Wir holen Bücher, CDs, DVDs und Schallplatten bei Ihnen ab — sorgfältig ausgewählt, in der Deutschschweiz.",
+    "Kostenlose Bücher-Abholung direkt bei Ihnen zu Hause — Bücher, CDs, Schallplatten und DVDs. Kamil und Mustafa, Vater und Sohn, seit 2021 in der Deutschschweiz.",
 };
 
 export default function RootLayout({

@@ -78,7 +78,7 @@ export function Hero() {
           >
             <Image
               src="/assets/family_photo.png"
-              alt="Kamil und Daniel — Gratis Bücher Abholung"
+              alt="Kamil und Mustafa — Gratis Bücher Abholung"
               fill
               className="object-cover"
               priority

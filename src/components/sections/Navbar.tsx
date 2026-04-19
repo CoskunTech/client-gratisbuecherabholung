@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const navItems = [
-  { href: "#start", label: "Startseite" },
+  { href: "#start", label: "Start" },
+  { href: "#abholen", label: "Angebot" },
   { href: "#ablauf", label: "Ablauf" },
-  { href: "#termine", label: "Abholtermine" },
+  { href: "#termine", label: "Termine" },
   { href: "#ueber", label: "Über uns" },
-  { href: "#fotos", label: "Fotos" },
   { href: "#kontakt", label: "Kontakt" },
 ];
 
@@ -19,7 +19,7 @@ export function Navbar() {
   const [activeId, setActiveId] = useState("start");
 
   useEffect(() => {
-    const sectionIds = ["start", "ablauf", "termine", "ueber", "fotos", "kontakt"];
+    const sectionIds = ["start", "abholen", "ablauf", "termine", "ueber", "kontakt"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
