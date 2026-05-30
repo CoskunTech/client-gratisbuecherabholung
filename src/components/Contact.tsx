@@ -196,15 +196,25 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex-1 overflow-hidden rounded-xl shadow-[var(--shadow-card)] min-h-[260px]">
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addressLine)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Route nach ${addressLine} in Google Maps planen`}
+              className="group relative flex-1 overflow-hidden rounded-xl shadow-[var(--shadow-card)] min-h-[260px]"
+            >
               <iframe
                 title={`Standort ${business.address.city}, ${business.address.region}`}
                 src={`https://maps.google.com/maps?q=${encodeURIComponent(addressLine)}&z=15&output=embed`}
-                className="h-full min-h-[260px] w-full border-0"
+                className="pointer-events-none h-full min-h-[260px] w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </div>
+              <span className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-lg)] transition-transform group-hover:-translate-x-1/2 group-hover:-translate-y-0.5">
+                <span aria-hidden>🧭</span>
+                Route planen
+              </span>
+            </a>
           </div>
         </div>
       </div>

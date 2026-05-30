@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import HowItWorks from "@/components/HowItWorks";
 import Schedule from "@/components/Schedule";
+import Coverage from "@/components/Coverage";
 import AboutUs from "@/components/AboutUs";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -19,6 +20,7 @@ export default function Home() {
         <TrustBar />
         <HowItWorks />
         <Schedule />
+        <Coverage />
         <AboutUs />
         <Testimonials />
         <FAQ />

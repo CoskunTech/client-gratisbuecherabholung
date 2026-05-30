@@ -12,7 +12,7 @@ const steps = [
   {
     num: 3,
     title: "Wir holen ab!",
-    desc: "Am vereinbarten Tag kommt unser Team direkt zu Ihnen. Einpacken müssen Sie nichts – wir sichten und verpacken die Bücher vor Ort und nehmen alles mit. Einfacher geht's nicht!",
+    desc: "Am vereinbarten Tag holen wir die Bücher ab. Wenn möglich, sollten die Bücher bereits in Taschen oder Kartons vorbereitet sein. Vor Ort prüfen wir kurz den Zustand und nehmen die wiederverwendbaren Bücher und Medien mit.",
   },
 ];
 
