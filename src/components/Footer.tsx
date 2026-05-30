@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import InstagramIcon from "./InstagramIcon";
 import FacebookIcon from "./FacebookIcon";
 
@@ -6,11 +7,20 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 py-16 text-white">
       <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-8 px-6 md:flex-row md:justify-between">
-        <div>
-          <p className="mb-1 text-lg font-bold">Gratis Bücher Abholung</p>
-          <p className="text-sm text-neutral-500">
-            © 2026 Gratis Bücher Abholung. Alle Rechte vorbehalten.
-          </p>
+        <div className="flex items-center gap-3">
+          <Image
+            src="/assets/Logo.png"
+            alt="Gratis Bücher Abholung Logo"
+            width={56}
+            height={41}
+            className="h-11 w-auto"
+          />
+          <div>
+            <p className="mb-1 text-lg font-bold">Gratis Bücher Abholung</p>
+            <p className="text-sm text-neutral-500">
+              © 2026 Gratis Bücher Abholung. Alle Rechte vorbehalten.
+            </p>
+          </div>
         </div>
 
         <div className="flex gap-3">

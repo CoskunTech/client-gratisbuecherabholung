@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { whatsappLink } from "@/data/business";
 
@@ -19,8 +20,21 @@ export default function Header() {
   return (
     <nav className="sticky top-0 z-50 border-b border-neutral-200 bg-bg/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-        <a href="#startseite" className="text-xl font-bold text-neutral-900">
-          <span className="text-primary-500">Gratis</span> Bücher Abholung
+        <a
+          href="#startseite"
+          className="flex items-center gap-2.5 text-xl font-bold text-neutral-900"
+        >
+          <Image
+            src="/assets/Logo.png"
+            alt="Gratis Bücher Abholung Logo"
+            width={48}
+            height={35}
+            priority
+            className="h-9 w-auto"
+          />
+          <span>
+            <span className="text-primary-500">Gratis</span> Bücher Abholung
+          </span>
         </a>
 
         <ul className="hidden gap-8 lg:flex">
