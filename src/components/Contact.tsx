@@ -19,10 +19,17 @@ export default function Contact() {
     const get = (key: string) => (data.get(key) as string | null)?.trim() ?? "";
     const vorname = get("vorname");
     const nachname = get("nachname");
-    const adresse = get("adresse");
+    const strasse = get("strasse");
+    const plz = get("plz");
+    const ort = get("ort");
     const anzahl = get("anzahl");
     const kontakt = get("kontakt");
     const bemerkungen = get("bemerkungen");
+
+    // Strasse + "PLZ Ort" zu einer Adresszeile zusammensetzen (leere Teile weglassen).
+    const adresse = [strasse, [plz, ort].filter(Boolean).join(" ")]
+      .filter(Boolean)
+      .join(", ");
 
     const lines = [
       "Hallo, ich möchte gerne eine kostenlose Abholung anfragen.",
@@ -85,18 +92,50 @@ export default function Contact() {
               </div>
 
               <div className="mb-5">
-                <label htmlFor="adresse" className="mb-1.5 block text-sm font-semibold">
-                  Adresse *
+                <label htmlFor="strasse" className="mb-1.5 block text-sm font-semibold">
+                  Strasse & Nr. *
                 </label>
                 <input
-                  id="adresse"
-                  name="adresse"
+                  id="strasse"
+                  name="strasse"
                   type="text"
                   required
-                  autoComplete="street-address"
-                  placeholder="Strasse, PLZ, Ort"
+                  autoComplete="address-line1"
+                  placeholder="Strasse und Hausnummer"
                   className="w-full rounded-lg border border-neutral-300 bg-surface px-4 py-3 text-base transition-colors focus:border-primary-500 focus:outline-none"
                 />
+              </div>
+
+              <div className="mb-5 grid gap-5 sm:grid-cols-[1fr_2fr]">
+                <div>
+                  <label htmlFor="plz" className="mb-1.5 block text-sm font-semibold">
+                    Postleitzahl *
+                  </label>
+                  <input
+                    id="plz"
+                    name="plz"
+                    type="text"
+                    required
+                    inputMode="numeric"
+                    autoComplete="postal-code"
+                    placeholder="z.B. 4125"
+                    className="w-full rounded-lg border border-neutral-300 bg-surface px-4 py-3 text-base transition-colors focus:border-primary-500 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="ort" className="mb-1.5 block text-sm font-semibold">
+                    Ort *
+                  </label>
+                  <input
+                    id="ort"
+                    name="ort"
+                    type="text"
+                    required
+                    autoComplete="address-level2"
+                    placeholder="z.B. Riehen"
+                    className="w-full rounded-lg border border-neutral-300 bg-surface px-4 py-3 text-base transition-colors focus:border-primary-500 focus:outline-none"
+                  />
+                </div>
               </div>
 
               <div className="mb-5 grid gap-5 sm:grid-cols-2">
