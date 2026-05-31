@@ -93,13 +93,15 @@ export default function Contact() {
 
               <div className="mb-5">
                 <label htmlFor="strasse" className="mb-1.5 block text-sm font-semibold">
-                  Strasse & Nr. *
+                  Strasse & Nr.
+                  <span className="ml-1.5 text-xs font-normal italic text-neutral-400">
+                    (optional)
+                  </span>
                 </label>
                 <input
                   id="strasse"
                   name="strasse"
                   type="text"
-                  required
                   autoComplete="address-line1"
                   placeholder="Strasse und Hausnummer"
                   className="w-full rounded-lg border border-neutral-300 bg-surface px-4 py-3 text-base transition-colors focus:border-primary-500 focus:outline-none"
