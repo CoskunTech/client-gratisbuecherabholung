@@ -14,6 +14,7 @@ export default function JsonLd() {
         name: business.name,
         url: business.url,
         image: `${business.url}/family_photo.jpg`,
+        logo: `${business.url}/assets/Logo.png`,
         telephone: business.phone,
         email: business.email,
         description:
