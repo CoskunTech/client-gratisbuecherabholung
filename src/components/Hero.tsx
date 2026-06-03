@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnchorLink from "./AnchorLink";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { whatsappLink } from "@/data/business";
 
@@ -26,12 +27,12 @@ export default function Hero() {
             >
               <WhatsAppIcon className="size-5" /> Schreiben Sie uns
             </a>
-            <a
+            <AnchorLink
               href="#kontakt"
               className="inline-flex items-center justify-center rounded-full border-2 border-primary-500 px-7 py-3.5 font-semibold text-primary-500 transition-transform hover:-translate-y-0.5"
             >
               Formular ausfüllen
-            </a>
+            </AnchorLink>
           </div>
           <p className="mt-6 text-sm text-neutral-500">
             ✓ Schnell & unkompliziert · ✓ Direkt bei Ihnen zu Hause · ✓ Auf

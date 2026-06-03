@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import AnchorLink from "./AnchorLink";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { whatsappLink } from "@/data/business";
 
@@ -20,7 +21,7 @@ export default function Header() {
   return (
     <nav className="sticky top-0 z-50 border-b border-neutral-200 bg-bg/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-        <a
+        <AnchorLink
           href="#startseite"
           className="flex items-center gap-2.5 text-xl font-bold text-neutral-900"
         >
@@ -35,17 +36,17 @@ export default function Header() {
           <span>
             <span className="text-primary-500">Gratis</span> Bücher Abholung
           </span>
-        </a>
+        </AnchorLink>
 
         <ul className="hidden gap-8 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <AnchorLink
                 href={link.href}
                 className="text-[15px] font-medium text-neutral-700 transition-colors hover:text-primary-500"
               >
                 {link.label}
-              </a>
+              </AnchorLink>
             </li>
           ))}
         </ul>
@@ -73,13 +74,13 @@ export default function Header() {
           <ul className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <AnchorLink
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   className="block text-base font-medium text-neutral-700"
                 >
                   {link.label}
-                </a>
+                </AnchorLink>
               </li>
             ))}
             <li>
