@@ -38,6 +38,15 @@ export default function JsonLd() {
           name,
         })),
         sameAs: [...business.sameAs],
+        // Görünür içerikle birebir aynı: sayfada 13 adet 5-yıldız yorum +
+        // "100 % empfohlen · 15 Bewertungen auf Facebook" yazıyor. Uydurma yok.
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+          reviewCount: "15",
+        },
         makesOffer: {
           "@type": "Offer",
           price: "0",

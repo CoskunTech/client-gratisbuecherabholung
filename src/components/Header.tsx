@@ -63,6 +63,8 @@ export default function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex size-10 items-center justify-center rounded-lg text-neutral-700 lg:hidden"
             aria-label="Menü"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? "✕" : "☰"}
           </button>
@@ -70,7 +72,10 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-neutral-200 bg-bg px-6 pb-6 lg:hidden">
+        <div
+          id="mobile-menu"
+          className="border-t border-neutral-200 bg-bg px-6 pb-6 lg:hidden"
+        >
           <ul className="flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               <li key={link.href}>
