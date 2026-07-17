@@ -231,14 +231,14 @@ export default function Contact() {
                 <ContactItem
                   icon="📍"
                   label="Adresse"
-                  href={`https://maps.google.com/?q=${encodeURIComponent(addressLine)}`}
+                  href={`https://www.google.com/maps?cid=${business.googleCid}`}
                   text={addressLine}
                 />
               </div>
             </div>
 
             <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addressLine)}`}
+              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${business.name}, ${addressLine}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Route nach ${addressLine} in Google Maps planen`}
@@ -246,7 +246,7 @@ export default function Contact() {
             >
               <iframe
                 title={`Standort ${business.address.city}, ${business.address.region}`}
-                src={`https://maps.google.com/maps?q=${encodeURIComponent(addressLine)}&z=15&output=embed`}
+                src={`https://maps.google.com/maps?cid=${business.googleCid}&z=17&output=embed`}
                 className="pointer-events-none h-full min-h-[260px] w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

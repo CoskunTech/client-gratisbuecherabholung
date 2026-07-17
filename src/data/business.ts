@@ -19,6 +19,12 @@ export const business = {
     latitude: 47.5759291,
     longitude: 7.6359032,
   },
+  // Google's own identifier for our verified Business Profile listing (the "cid"
+  // from the ludocid/fid in a Maps URL for this place). Use this — not raw
+  // lat/lng — for Maps links: a bare coordinate has no identity, so Google
+  // labels it with whatever POI happens to be nearest (it showed a neighbour's
+  // shop, "Melsa", instead of us). The cid always resolves to our own listing.
+  googleCid: "3446702955716006944",
   // Regions we actively serve — keep in sync with TrustBar/Schedule.
   areaServed: ["Basel", "Baselland", "Zürich", "Aargau", "Solothurn"],
   sameAs: [
